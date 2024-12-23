@@ -1,0 +1,116 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    width: 340px;
+    height: 300px;
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border-top: 1px solid rgb(0, 4, 255);
+    border-left: 1px solid rgb(212, 0, 255);
+    border-right: 1px solid rgb(255, 0, 0);
+    border-bottom: 1px solid rgb(102, 255, 0);
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .circle{
+    height: 200px;
+    border: 25px solid #fff;
+    position: relative;
+    border-radius: 50%;
+    min-width: 200px ;
+}
+
+.box .circle:nth-child(1){
+    left: 40px;
+    border: 25px solid rgb(0, 21, 255);
+    animation: rotation 2s linear infinite;
+}
+@keyframes rotation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.box .circle:nth-child(2){
+    left: -40px;
+    border: 25px solid #fff;
+    animation: rotations 2s linear infinite;
+}
+@keyframes rotations {
+    0%{
+        transform: rotate(-0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.box .circle:nth-child(1)::before{
+    content: "";
+    position: absolute;
+    border: 25px solid transparent;
+    border-right: 25px solid rgb(255, 255, 255);
+    border-top: 25px solid rgb(0, 21, 255);
+    inset: -25px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    z-index: 100;
+}
+
+.box .circle:nth-child(1)::after{
+    content: "";
+    position: absolute;
+    border: 25px solid transparent;
+    border-left: 25px solid rgb(255, 255, 255);
+    border-bottom: 25px solid rgb(200, 0, 255);
+    inset: -25px;
+    border-radius: 50%;
+    transform: rotate(-65deg);
+    z-index: 1;
+    filter: blur(-15px);
+}
+
+
+.box .circle:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    border: 25px solid transparent;
+    border-right: 25px solid rgb(255, 252, 252);
+    border-top: 25px solid rgb(251, 255, 0);
+    inset: -25px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    z-index: 100;
+    
+}
+
+.box .circle:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    border: 25px solid transparent;
+    border-bottom: 25px solid rgb(51, 255, 0);
+    border-right: 25px solid #ffffff;
+    inset: -25px;
+    border-radius: 50%;
+    transform: rotate(-65deg);
+    z-index: 1;
+    filter: blur(5px);
+}
+
